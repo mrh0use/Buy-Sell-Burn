@@ -1,66 +1,70 @@
-# Buy-Sell-Burn
-//buy sell burn is a gamified dapp that takes the popular game in which participants are forced to choose between "buy", "sell", and "burn" between 3 NFT or DeFi projects.  This dapp will consist of a wallet-connect and allow connected users to play the game.  Collected in-game information will be cross referenced with player wallet contents to gauge consumer sentiment. Active participants will earn points for completing each round and placed on a leaderboard.  Players can vote in 5 polls for free each day, before being given an option to pay for a "power up" and earn more votes.  Players leading in votes at the end of each play period or season may earn an NFT or otherwise sponsored prize.
-//blockchain data and other browsing data may be collected by site users and anonymized for market research purposes to analyze consumer sentiment regarding web3 products and services.  This information may be sold to 3rd parties to assist in their consumer research and marketing efforts.
-//### Components:
+# Getting Started with Create React App
 
-1. **Smart Contract**: This will handle the game logic, store the results, and manage the leaderboard.
-2. **Frontend**: A user-friendly interface to interact with the smart contract.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Smart Contract:
+## Available Scripts
 
-#### Data Structures:
+In the project directory, you can run:
 
-- **User Struct**: 
-  - Address
-  - Points (number of rounds played)
+### `npm start`
 
-- **NFT Struct**:
-  - Image URL (from OpenSea or IPFS)
-  - Buy count
-  - Sell count
-  - Burn count
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- **Leaderboard**: A mapping of user addresses to their points, sorted by points.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-#### Functions:
+### `npm test`
 
-- **playGame**: Allows a user to select Buy, Sell, or Burn for three NFTs. Validates that each action is selected only once. Updates the counts for each NFT and awards the user a point.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- **getLeaderboard**: Returns the leaderboard.
+### `npm run build`
 
-- **getNFTData**: Returns data about the NFTs (for the dApp owners).
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Frontend:
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-- **Connect Wallet & Signature Authentication**: Using libraries like Web3.js or ethers.js, allow users to connect their EVM-compatible wallets and sign a message for authentication.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- **Game Interface**: 
-  - Fetch 3 NFT images from OpenSea's API or IPFS.
-  - For each NFT, provide options to Buy, Sell, or Burn.
-  - Validate user choices (ensure each action is selected only once).
-  - Submit choices to the smart contract.
+### `npm run eject`
 
-- **Leaderboard**: Display the top players and their points.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### Workflow:
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-1. User connects their wallet and signs a message for authentication.
-2. User clicks "Play" and is presented with 3 random NFT images fetched from OpenSea or IPFS.
-3. User selects Buy, Sell, or Burn for each NFT.
-4. Choices are validated and sent to the smart contract.
-5. The smart contract updates the NFT counts and awards the user a point.
-6. The frontend updates to show the user's new point total and displays the leaderboard.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-### Considerations:
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-- **Privacy**: Only the dApp owners should access the results. This can be achieved by having specific functions in the smart contract that are only callable by the owner's address.
+## Learn More
 
-- **Spam Prevention**: Implement a cooldown period between game rounds for each user to prevent spamming.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- **Scalability**: As the number of users grows, consider optimizing the leaderboard to handle a large number of entries efficiently.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-- **Data Collection**: Since you're interested in collecting browsing data, consider integrating analytics tools that respect user privacy. Ensure that users are informed about the data collection and obtain their consent.
+### Code Splitting
 
-- **NFT Image Retrieval**: When fetching images from OpenSea, use their API to get trending or popular NFTs. If using IPFS, you'd need a curated list of popular NFT image hashes to pull from.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-This refined architecture should align more closely with your vision for the "Buy, Sell, or Burn" dApp. The next steps would involve detailed smart contract development, frontend development, and rigorous testing.
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
